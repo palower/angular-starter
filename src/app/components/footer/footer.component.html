@@ -1,0 +1,17 @@
+<div class="container-fluid pt-4 my-md-5 pt-md-5 border-top bg-light">
+    <div class="row no-gutter">
+        <div class="col-12 col-md">
+            <div class="bg-dark text-center p-2">
+                <img src="{{logoPath}}" alt="{{logoAlt}}">
+            </div>
+            <small class="d-block mb-3 text-muted">{{copyRight}}</small>
+        </div>
+        <div class="col-12 col-sm-4 col-md" *ngFor="let item of footerData">
+            <h5 *ngIf="item.url === ''">{{item.name}}</h5>
+            <a class="h5 d-block" *ngIf="item.url !== ''" href="{{item.url}}" id="navbarDropdownMenuLink">{{item.name}}</a>
+            <ul class="list-unstyled text-small" *ngIf="item.children?.length > 0">
+                <li *ngFor="let subitem of item.children"><a class="text-muted" href="{{subitem.url}}">{{subitem.name}}</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

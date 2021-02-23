@@ -30,7 +30,10 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/app/scripts/jquery.min.js",
+              "src/app/scripts/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -95,7 +98,10 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/app/scripts/jquery.min.js",
+              "src/app/scripts/bootstrap.min.js"
+            ]
           }
         },
         "lint": {

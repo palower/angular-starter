@@ -1,0 +1,156 @@
+<div class="container">
+    <h1>Forms</h1>
+    <form [formGroup]="angularForm" (ngSubmit)="onSubmit(formSubmitted)" >
+        <div class="row">
+            <div class="col-12 col-sm-3">
+                <div class="form-group">
+                    <input [ngClass]="{ 'is-invalid': f.fName.invalid && (f.fName.dirty || f.fName.touched) }" 
+                        required formControlName="fName" type="text" 
+                        class="form-control" id="fName" 
+                        aria-describedby="First name" name="fName" placeholder="First Name">
+                    <label for="fName">First name</label>
+                    <div *ngIf="f.fName.invalid && (f.fName.dirty || f.fName.touched)" class="invalid-feedback">
+                        <div *ngIf="f.fName.errors.required">First name is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-3">
+                <div class="form-group">
+                    <input [ngClass]="{ 'is-invalid': f.lName.invalid && (f.lName.dirty || f.lName.touched) }" 
+                    required formControlName="lName" type="text" 
+                    class="form-control" id="lName" 
+                    aria-describedby="Last name" name="lName" placeholder="Last Name">
+                    <label for="lName">Last name</label>
+                    <div *ngIf="f.lName.invalid && (f.lName.dirty || f.lName.touched)" class="invalid-feedback">
+                        <div *ngIf="f.lName.errors.required">Last name is required</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                <div class="form-group">
+                    <input [ngClass]="{ 'is-invalid': f.address1.invalid && (f.address1.dirty || f.address1.touched) }" 
+                        required formControlName="address1" type="text" 
+                        class="form-control" id="address1" 
+                        aria-describedby="Address line 1" name="address1" placeholder="Address line 1">
+                    <label for="address1">Address line 1</label>
+                    <div *ngIf="f.address1.invalid && (f.address1.dirty || f.address1.touched)" class="invalid-feedback">
+                        <div *ngIf="f.address1.errors.required">Address is required</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                <div class="form-group">
+                    <input formControlName="address2" type="text" 
+                        class="form-control" id="address2" 
+                        aria-describedby="Address line 2" name="address2" placeholder="Address line 2">
+                    <label for="address2">Address line 2</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-2">
+                <div class="form-group">
+                    <input [ngClass]="{ 'is-invalid': f.city.invalid && (f.city.dirty || f.city.touched) }" 
+                        required formControlName="city" type="text" 
+                        class="form-control" id="city" 
+                        aria-describedby="city" name="city" placeholder="City">
+                    <label for="city">City</label>
+                    <div *ngIf="f.city.invalid && (f.city.dirty || f.city.touched)" class="invalid-feedback">
+                        <div *ngIf="f.city.errors.required">City is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-2">
+                <div class="form-group">
+                    <select [ngClass]="{ 'is-invalid': (f.state.dirty || f.state.touched) && f.state.value==='' }" 
+                        required formControlName="state" type="select"
+                        class="form-control" id="state"
+                        aria-describedby="state" name="state" palceholder="State">
+                        <option value="AK">AK</option>
+                        <option value="OR">OR</option>
+                        <option value="TX">TX</option>
+                        <option value="WA">WA</option>
+                    </select>
+                    <label for="state">State</label>
+                    <div *ngIf="f.state.invalid && (f.state.dirty || f.state.touched)" class="invalid-feedback">
+                        <div *ngIf="f.state.errors.required">State is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-2">
+                <div class="form-group">
+                    <input [ngClass]="{ 'is-invalid': f.zip.invalid && (f.zip.dirty || f.zip.touched) }" 
+                        required formControlName="zip" type="text" 
+                        class="form-control" id="zip" 
+                        aria-describedby="zip" name="zip" placeholder="Zip">
+                    <label for="zip">Zip</label>
+                    <div *ngIf="f.zip.invalid && (f.zip.dirty || f.zip.touched)" class="invalid-feedback">
+                        <div *ngIf="f.zip.errors.required">Zip is required</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                <div class="form-group">
+                    <input [ngClass]="{ 'is-invalid': f.email.invalid && (f.email.dirty || f.email.touched) }" 
+                    required formControlName="email" type="email" 
+                    class="form-control" id="email" 
+                    aria-describedby="Email" name="email" placeholder="user@email.com">
+                    <label for="email">Email</label>
+                    <div *ngIf="f.email.errors && (f.email.dirty || f.email.touched)" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email is required</div>
+                        <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                <div class="form-group">
+                    <input [ngClass]="{ 'is-invalid': f.password.invalid && (f.password.dirty || f.password.touched) }" 
+                        required formControlName="password" type="password" 
+                        class="form-control" id="password" 
+                        aria-describedby="password" name="password" placeholder="Password">
+                    <label for="password">Password</label>
+                    <div *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                        <div *ngIf="f.password.errors.minlength">Password must be 6 characters</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                <div class="form-group">
+                    <input [ngClass]="{ 'is-invalid': f.confirmPassword.invalid && (f.confirmPassword.dirty || f.confirmPassword.touched) }" 
+                        required formControlName="confirmPassword" type="password" 
+                        class="form-control" id="confirmPassword" 
+                        aria-describedby="confirm password" name="confirmPassword" placeholder="Confirm password">
+                    <label for="confirmPassword">Confirm password</label>
+                    <div *ngIf="f.confirmPassword.invalid && f.confirmPassword.value !== f.password.value && (f.confirmPassword.dirty || f.confirmPassword.touched)" class="invalid-feedback">
+                        <div *ngIf="f.confirmPassword.errors.required">Passwords must match</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                <div class="form-group">
+                    <input [ngClass]="{ 'is-invalid': f.terms.invalid && (f.terms.dirty || f.terms.touched) }" 
+                        required formControlName="terms" type="checkbox" 
+                        class="form-control" id="terms" 
+                        aria-describedby="Terms and Conditions" name="terms" placeholder="Terms and Conditions">
+                        <label for="terms">Terms and Conditions</label>
+                        <div *ngIf="f.terms.invalid && f.terms.value !== f.terms.value && (f.terms.dirty || f.terms.touched)" class="invalid-feedback">
+                        <div *ngIf="f.terms.errors.required">Please accept the Terms and Conditions</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

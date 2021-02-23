@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+@import "app/stylesheets/vendor/bootstrap/bootstrap.scss";
+
+/*CUSTOM*/
+@import "app/stylesheets/shared/layout";
+@import "app/stylesheets/shared/variables";
+@import "app/stylesheets/header";
+@import "app/stylesheets/footer";
+@import "app/stylesheets/forms";
+

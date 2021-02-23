@@ -1,0 +1,111 @@
+form {
+    .form-group {
+        margin-bottom: 15px;
+        position: relative;
+        select{
+            cursor: pointer;
+            + label {
+                width:auto;
+                height:auto;
+                pointer-events: none;
+            }
+            padding-bottom:1px;
+        }
+        label {
+            position: absolute;
+            top: 0; 
+            left: 8px;
+            text-align: left;
+            display: block;
+            width: 100%;
+            height: 52px;
+            line-height: 62px;
+            text-transform: uppercase;
+            font-size: 13px;
+            font-weight: 200;
+            background: transparent;
+            color: $dark-gray;
+            margin: 0px auto;
+            cursor: text;
+            transition: all .15s ease-in-out;
+        } 
+        input, textarea, select {
+            &.ng-valid.ng-untouched + label,
+            &:not(:focus).ng-pristine.ng-touched + label {
+                position: absolute;
+                top: 0; 
+                left: 8px;
+                text-align: left;
+                display: block;
+                width: 100%;
+                height: 52px;
+                line-height: 62px;
+                text-transform: uppercase;
+                font-size: 13px;
+                font-weight: 200;
+                background: transparent;
+                color: $dark-gray;
+                margin: 0px auto;
+                cursor: text;
+                transition: all .15s ease-in-out;
+            }
+            &:hover, &:focus {
+                border-color: $secondary-color;
+            }
+            &:focus {
+                background-position: left bottom;
+                background-size: 100% 1px;
+                border-bottom: none;
+            }
+            &:valid + label, &:focus + label, 
+            &:invalid.ng-dirty + label,
+            &:focus.ng-valid.ng-untouched + label {
+                height: 20px; 
+                line-height: 20px; 
+                font-size: 11px;
+                color: $secondary-color;
+                left:8px
+            }
+            &:invalid:not(:focus).ng-dirty {
+                +label {
+                    color:$alert-color;
+                }
+                border-bottom:1px solid $alert-color;                
+            }
+            position: relative;
+            display: block;
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid $light-gray;
+            border-radius:0;
+            background-color: transparent;
+            margin: 0px auto;
+            padding: 15px 8px 0px 8px;
+            height: 45px !important;
+            outline: none !important;
+            font-size: 20px;
+            color: $dark-gray;
+            transition: all .2s ease-in-out;   
+            &[type="checkbox"]{
+                width:25px;
+                margin:0;
+                float:left;
+                + label {
+                    position: relative;
+                    line-height: 43px;
+                }
+            }         
+        }
+        ::-webkit-input-placeholder { text-align: right; color: $light-gray; font-size: 13px; font-weight: 200; }
+        :-moz-placeholder { text-align: right; color: $light-gray; font-size: 13px; font-weight: 200; }
+        ::-moz-placeholder { text-align: right; color: $light-gray; font-size: 13px; font-weight: 200; }
+        :-ms-input-placeholder { text-align: right; color: $light-gray; font-size: 13px; font-weight: 200; }  
+
+        input:focus ::-webkit-input-placeholder { color: transparent; font-size: 0; }
+        input:focus :-moz-placeholder { color: transparent; font-size: 0; }
+        input:focus ::-moz-placeholder { color: transparent; font-size: 0; }
+        input:focus :-ms-input-placeholder { color: transparent; font-size: 0; }
+
+             
+    }
+}

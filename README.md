@@ -1,6 +1,28 @@
 # AngularKit
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.6.
+This project uses NG-Bootstrap, a combination of Bootstrap 4 and Angular with prebuilt components and scripting (https://ng-bootstrap.github.io/#/home)
+
+# TO-DOs
+--> Finish form ++ buttons
+==> build as component library
+    -- forms/inputs
+    -- UI elements, ?, Resources
+--> check active state in navigation is getting set
+--> add components from Oltiva Akumina example
+--> set up variables in scss for branding colors and fonts
+
+# Common tasks
+Generate a new component: ng g c "component-name" --module=app
+--> add routing to app-routing.module.ts
+--> remove component reference to local scss
+--> add scss to stylesheet dir and import to styles.scss 
+
+# Component build structure
+Container class > row > cols
+-- No bootstrap layouts used in page level, only in components
+-- allows for full-width (.container-fluid) and set-max-width (.container) components
+Content: stub in all content with objects in the .ts files
 
 ## Development server
 
